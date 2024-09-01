@@ -15,7 +15,4 @@ buildscript {
 
 apply("versions.gradle")
 
-//val artifactId = getArtifactId(project)
-//println("Artifact ID for jetco: $artifactId")
-
 tasks.register<Delete>("clean") { delete(rootProject.layout.buildDirectory) }
