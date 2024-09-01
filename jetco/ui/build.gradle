@@ -1,0 +1,99 @@
+import com.android.tools.build.jetifier.core.utils.Log
+
+/*
+ * Copyright 2024 by Developer Chunk.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import com.vanniktech.maven.publish.SonatypeHost
+
+plugins {
+    id "com.android.library"
+    id "org.jetbrains.kotlin.android"
+    id "maven-publish"
+    id "com.vanniktech.maven.publish" version "0.29.0"
+    id "com.gradleup.nmcp" version "0.0.7"
+}
+
+apply from: "$rootDir/common-scripts.gradle"
+apply from: "$rootDir/versions.gradle"
+
+android {
+    namespace = "${library.groupId}.ui"
+    group = library.groupId
+
+    defaultConfig {
+        multiDexEnabled true
+    }
+
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion "1.5.1"
+    }
+}
+
+dependencies {
+    implementation platform(libs.androidx.compose.bom)
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.ui
+    implementation libs.androidx.material3
+}
+
+afterEvaluate {
+
+    mavenPublishing {
+
+        coordinates(library.groupId, "ui", library.version_name)
+        version = library.version_name
+        pom {
+
+            name = "JetCo"
+            description = "A versatile Jetpack Compose library for modern Android development."
+            inceptionYear = "2024"
+            url = "https://github.com/developerchunk/jetco/"
+            licenses {
+                license {
+                    name = "The Apache License, Version 2.0"
+                    url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                    distribution = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                }
+            }
+            developer {
+                id = "developerchunk"
+                name = "Developer Chunk"
+                url = "https://github.com/developerchunk/jetco/"
+            }
+            scm {
+                url = "https://github.com/developerchunk/jetco/"
+                connection = "scm:git:git://github.com/developerchunk/jetco.git"
+                developerConnection = "scm:git:ssh://git@github.com/developerchunk/jetco.git"
+            }
+
+            withXml {
+                def repo = asNode().appendNode('repositories').appendNode('repository')
+                repo.appendNode('name', 'Google')
+                repo.appendNode('id', 'google')
+                repo.appendNode('url', ' https://maven.google.com/')
+            }
+        }
+        publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+        signAllPublications()
+//        publishToMavenCentral(SonatypeHost.DEFAULT)
+    }
+
+
+}
+
