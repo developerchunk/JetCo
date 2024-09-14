@@ -2,7 +2,7 @@
 
 Welcome to the **JetCo** library documentation! JetCo is your ultimate **Open-Source** partner for crafting visually stunning, interactive, and efficient UI components in Android apps. 💡 Designed specifically for Jetpack Compose enthusiasts, JetCo is here to make your life easier, your apps prettier, and your users happier. 😊
 
-View the full Documentation of [JetCo-Docs](https://jetco.developerstring.com)
+View the full Documentation of <a href="https://jetco.developerstring.com" target="_blank" rel="noopener noreferrer">JetCo Docs</a>
 
 <a href="https://github.com/DeveloperChunk/JetCo" target="_blank" rel="noopener noreferrer">![GitHub release (latest by date)](https://img.shields.io/github/v/release/developerchunk/jetco?label=GitHub)</a> <a href="https://search.maven.org/artifact/com.developerstring.jetco/ui/" target="_blank" rel="noopener noreferrer">![Maven Central](https://img.shields.io/maven-central/v/com.developerstring.jetco/ui.svg?label=Maven%20Central)</a>
 
@@ -60,7 +60,8 @@ Check out the examples below to see JetCo in action!
 
 ## 🚀 **Getting Started**
 
-Want to get started right away? We've got your back! 🏃‍♂️ Head over to the [JetCo-Docs](https://jetco.developerstring.com) for installation instructions, sample code, tips, tricks, in-depth customization details, and to see how easy it is to integrate JetCo components. You’ll be building gorgeous UIs in no time! ⏱
+Want to get started right away? We've got your back! 🏃‍♂️ Head over to the <a href="https://jetco.developerstring.com" target="_blank" rel="noopener noreferrer">JetCo Docs</a>
+ for installation instructions, sample code, tips, tricks, in-depth customization details, and to see how easy it is to integrate JetCo components. You’ll be building gorgeous UIs in no time! ⏱
 
 ---
 
@@ -74,7 +75,7 @@ No matter if you’re working on a personal project or building the next unicorn
 
 ---
 
-For more details on how to make the most out of JetCo, dive into our [Sample](https://jetco.developerstring.com/sample/jetco-ui) and [Guide](https://jetco.developerstring.com/guide/jetco-ui) sections.
+For more details on how to make the most out of JetCo, dive into our <a href="https://jetco.developerstring.com/sample/jetco-ui" target="_blank" rel="noopener noreferrer">Sample</a> and <a href="https://jetco.developerstring.com/guide/jetco-ui" target="_blank" rel="noopener noreferrer">Guide</a> sections.
 
 ---
 
