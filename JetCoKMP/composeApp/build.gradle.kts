@@ -7,7 +7,6 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
-    alias(libs.plugins.composeHotReload)
 }
 
 kotlin {
@@ -21,16 +20,16 @@ kotlin {
         browser()
         binaries.executable()
     }
-    
-     listOf(
-         iosArm64(),
-         iosSimulatorArm64()
-     ).forEach { iosTarget ->
-         iosTarget.binaries.framework {
-             baseName = "ComposeApp"
-             isStatic = true
-         }
-     }
+
+    listOf(
+        iosArm64(),
+        iosSimulatorArm64()
+    ).forEach { iosTarget ->
+        iosTarget.binaries.framework {
+            baseName = "ComposeApp"
+            isStatic = true
+        }
+    }
 
     jvm {
         compilerOptions {
@@ -54,6 +53,7 @@ kotlin {
             implementation(libs.androidx.activity.compose)
         }
         commonMain.dependencies {
+            implementation(project(":jetco"))
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
@@ -62,8 +62,8 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
-            implementation("org.jetbrains.compose.material:material-icons-extended:1.7.3")
-            implementation(project(":jetco"))
+            implementation(libs.material.icons.extended)
+
 //            implementation(libs.ui)
         }
         commonTest.dependencies {
