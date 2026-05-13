@@ -17,7 +17,7 @@
 package com.developerstring.jetco_kmp.components.picker.model
 
 import androidx.compose.runtime.Stable
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 

@@ -39,7 +39,7 @@ import com.developerstring.jetco_kmp.components.picker.config.PickerDefaults
 import com.developerstring.jetco_kmp.components.picker.config.PickerHeaderConfig
 import com.developerstring.jetco_kmp.components.picker.config.WheelPickerConfig
 import com.developerstring.jetco_kmp.components.picker.model.PickerDisplayMode
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 
